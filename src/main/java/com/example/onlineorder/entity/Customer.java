@@ -23,8 +23,12 @@ public class Customer implements Serializable  {
     private String lastName;
 
     private String password;
-
     private boolean enabled;
+
+    private String phone;
+    private String address;
+    private String uid;
+    private String profileImage;
 
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(unique = true)
