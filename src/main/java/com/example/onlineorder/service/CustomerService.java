@@ -24,8 +24,13 @@ public class CustomerService {
 
     }
 
+    // get by email
     public Customer getCustomer(String email) {
         return customerDao.getCustomer(email);
+    }
+    // get by email
+    public Customer getCustomerByUid(String uid) {
+        return customerDao.getCustomerByUid(uid);
     }
 
     // find all customers

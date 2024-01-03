@@ -39,6 +39,7 @@ public class CustomerDao {
 
     }
 
+    // get by email
     public Customer getCustomer(String email) {
         Customer customer = null;
         try (Session session = sessionFactory.openSession()) {
@@ -48,6 +49,18 @@ public class CustomerDao {
         }
         return customer;
     }
+
+    // get by uid
+    public Customer getCustomerByUid(String uid) {
+        Customer customer = null;
+        try (Session session = sessionFactory.openSession()) {
+            customer = session.get(Customer.class, uid);
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+        return customer;
+    }
+
 
     // find all customers
     public List<Customer> findAll() {

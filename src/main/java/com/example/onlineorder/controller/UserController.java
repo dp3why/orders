@@ -23,6 +23,11 @@ public class UserController {
     public List<Customer> getCustomers() {
         return customerService.findAll();
     }
+    @GetMapping("/uid/{uid}")
+    public Customer getCustomerByUid(@PathVariable("uid") String uid) {
+        return customerService.getCustomerByUid(uid);
+    }
+
 
 
 

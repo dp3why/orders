@@ -1,0 +1,7 @@
+# Heroku.yml
+build:
+  docker:
+    web: Dockerfile
+
+run:
+  web: catalina.sh run

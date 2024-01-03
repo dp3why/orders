@@ -27,6 +27,8 @@ public class Customer implements Serializable  {
 
     private String phone;
     private String address;
+
+    @Column(unique = true)
     private String uid;
     private String profileImage;
 

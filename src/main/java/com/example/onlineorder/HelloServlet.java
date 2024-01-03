@@ -5,11 +5,14 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import org.apache.commons.io.IOUtils;
 import org.json.JSONObject;
 
-import java.io.*;
-import javax.servlet.http.*;
-import javax.servlet.annotation.*;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.PrintWriter;
 
-@WebServlet(name = "helloServlet", value = "/hello-servlet")
+@WebServlet(name = "helloServlet", value = "/hello")
 public class HelloServlet extends HttpServlet {
     private String message;
 
@@ -19,19 +22,9 @@ public class HelloServlet extends HttpServlet {
 
     public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("application/json");
-        // String username = request.getParameter("username");
-        // Hello
-       PrintWriter out = response.getWriter();
-      //  out.println("<html><body>");
-      //  out.println("<h1>hello" + username+ "</h1>");
-     //   out.println("</body></html>");
 
-        //JSONObject customer = new JSONObject();
-        //customer.put("email", "sun@laioffer.com");
-        //customer.put("first_name", "rick");
-       // customer.put("last_name", "sun");
-        //customer.put("age", 50);
-        //response.getWriter().print(customer);
+        PrintWriter out = response.getWriter();
+
         ObjectMapper mapper = new ObjectMapper();
         Customer customer= new Customer();
         customer.setEmail("sun@laioffer.com");
